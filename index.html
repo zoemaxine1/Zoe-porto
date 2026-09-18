@@ -26,6 +26,7 @@
       <a href="#work">projects</a>
       <a href="#about">about</a>
       <a href="#contact">contact</a>
+      <a href="#" class="resume-btn" onclick="openResume(event)">RESUME</a>
     </nav>
 
   </header>
@@ -678,5 +679,30 @@
   </script>
 
 </body>
+<!-- Resume Popup -->
+<div id="resume-modal" class="resume-modal" onclick="closeResume(event)">
+  <div class="resume-container">
+    <button class="resume-close" onclick="closeResume(event)">×</button>
+    <iframe src="zoe_design.pdf"></iframe>
+  </div>
+</div>
 
+<script>
+function openResume(event) {
+  event.preventDefault();
+  document.getElementById("resume-modal").style.display = "flex";
+}
+
+function closeResume(event) {
+  if (
+    event.target.id === "resume-modal" ||
+    event.target.classList.contains("resume-close")
+  ) {
+    document.getElementById("resume-modal").style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
 </html>
